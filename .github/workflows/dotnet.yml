@@ -33,3 +33,16 @@ jobs:
         path: |
           ./**/*.aab
           ./**/*.apk
+    - name: App Center
+      # You may pin to the exact commit or the version.
+      # uses: wzieba/AppCenter-Github-Action@70e33d4842b97b381833ad5c9c93a562b39d5d9f
+      uses: wzieba/AppCenter-Github-Action@v1.3.4
+      with: 
+        # App name followed by username e.g. wzieba/Sample-App
+        appName: test
+        # Upload token - you can get one from appcenter.ms/settings
+        token: c481020be885af4006b60b9201c91828b8f547f4
+        # Distribution group
+        group: all
+        # Artefact to upload (.apk or .ipa)
+        file: .apk          
