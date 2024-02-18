@@ -10,11 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
     - uses: actions/checkout@v3
-    - name: Install Android SDK
-      uses: android/setup-android@v2
-      with:
-        sdk-version: '30.0.3'  # Укажите нужную версию Android SDK
     - name: Setup Keystore File
       run: |
         echo "${{ secrets.KEYSTORE_FILE }}" > myapp.keystore.asc
