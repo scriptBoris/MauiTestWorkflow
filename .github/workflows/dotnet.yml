@@ -8,9 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - uses: android/setup-android@v2
     - name: Setup Keystore File
       run: |
         echo "${{ secrets.KEYSTORE_FILE }}" > myapp.keystore.asc
@@ -20,7 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Install .NET MAUI
-      run: dotnet workload install maui
+      run: dotnet workload install maui-android
+
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
@@ -31,11 +33,3 @@ jobs:
         path: |
           ./**/*.aab
           ./**/*.apk
-    #app center
-    - name: Add App Center CLI to PATH
-      run: echo "::add-path::$HOME/.dotnet/tools"
-    - name: Publish to App Center
-      run: |
-        dotnet tool install --global appcenter-cli
-        appcenter login --token 3b45ed705f9920e20fc2f8da50cbbe0e775d9d53
-        appcenter distribute release -f bin\Release\net8.0-android\com.companyname.mauitestworkflow-Signed.apk -g all
