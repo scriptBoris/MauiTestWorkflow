@@ -31,6 +31,9 @@ jobs:
         path: |
           ./**/*.aab
           ./**/*.apk
+    #app center
+    - name: Add App Center CLI to PATH
+      run: echo "::add-path::$HOME/.dotnet/tools"
     - name: Publish to App Center
       run: |
         dotnet tool install --global appcenter-cli
