@@ -55,4 +55,4 @@ jobs:
         # Distribution group
         group: all
         # Artefact to upload (.apk or .ipa)
-        file: bin/Release/net8.0-android/com.companyname.mauitestworkflow-Signed.apk
+        file: /home/runner/work/MauiTestWorkflow/MauiTestWorkflow/MauiTestWorkflow/bin/Release/net8.0-android/com.companyname.mauitestworkflow-Signed.apk
