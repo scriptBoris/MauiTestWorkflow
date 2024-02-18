@@ -43,3 +43,16 @@ jobs:
         path: |
           ./**/*.aab
           ./**/*.apk
+
+    #appcenter
+    - name: App Center
+      uses: wzieba/AppCenter-Github-Action@v1.3.4
+      with:
+        # App name followed by username e.g. wzieba/Sample-App
+        appName: scriptboris-gmail.com/MAUI-test
+        # Upload token - you can get one from appcenter.ms/settings
+        token: 3b45ed705f9920e20fc2f8da50cbbe0e775d9d53
+        # Distribution group
+        group: all
+        # Artefact to upload (.apk or .ipa)
+        file: bin/Release/net8.0-android/com.companyname.mauitestworkflow-Signed.apk
