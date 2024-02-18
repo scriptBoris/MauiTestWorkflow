@@ -56,3 +56,14 @@ jobs:
         group: all
         # Artefact to upload (.apk or .ipa)
         file: /home/runner/work/MauiTestWorkflow/MauiTestWorkflow/MauiTestWorkflow/bin/Release/net8.0-android/com.companyname.mauitestworkflow-Signed.apk
+        #buildVersion: # optional
+        # Build number parameter required for macOS .pkg and .dmg files
+        #buildNumber: # optional
+        # Release notes visible on release page
+        #releaseNotes: # optional
+        # Generate release notes based on the latest git commit
+        #gitReleaseNotes: # optional
+        # If true, send an email notification to the distribution group
+        notifyTesters: true
+        # If true, shows additional information from the action execution
+        #debug: # optional
