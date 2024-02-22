@@ -38,7 +38,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build MauiTestWorkflow/MauiTestWorkflow.csproj -c Release -f net8.0-android /p:AndroidSigningKeyStore=myapp.keystore /p:AndroidSigningKeyAlias="${{ secrets.KEYSTORE_ALIAS }}" /p:AndroidSigningKeyPass="${{ secrets.KEYSTORE_PASSWORD }}" /p:AndroidSigningStorePass="${{ secrets.KEYSTORE_PASSWORD }}" --no-restore /p:DefineConstants=DEVELOP
+      run: dotnet build MauiTestWorkflow/MauiTestWorkflow.csproj -c Release -f net8.0-android /p:AndroidKeyStore=true /p:AndroidSigningKeyStore=myapp.keystore /p:AndroidSigningKeyAlias="${{ secrets.KEYSTORE_ALIAS }}" /p:AndroidSigningKeyPass="${{ secrets.KEYSTORE_PASSWORD }}" /p:AndroidSigningStorePass="${{ secrets.KEYSTORE_PASSWORD }}" --no-restore /p:DefineConstants=DEVELOP
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
