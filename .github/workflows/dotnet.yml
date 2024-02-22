@@ -16,7 +16,7 @@ jobs:
     - name: Setup Keystore File
       run: |
         echo "${{ secrets.KEYSTORE_FILE_BASE64 }}" > myapp.keystore
-        cat myapp.keystore
+        sha256sum myapp.keystore
       
 
     #android sdk
