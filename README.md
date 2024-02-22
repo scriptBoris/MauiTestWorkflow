@@ -13,9 +13,21 @@ MIIKBgIBAzCCCbAGCSqGSIb3DQEHAaCCCaEEggmdMIIJmTCCBbAGCSqGSIb3DQEHAaCCBaEEggWdMIIF
 ```
 
 ## KEYSTORE_PASSWORD
-Это пароль который мы вводим каждый раз при расспростарении релизной апкашки
+Это пароль хранилища ключей, конкретно файла `*.keystore`. 
+
+По сути файл `*.keystore` это контейнер, который хранит в себе ключи. И каждый ключ имеет свой пароль для открытия. 
+
+Через внешние утилиты, в процессе создания `keystore` (например keytool.exe) можно указать разный пароль для `keystore` и для ключа (он же `alias`).
+
+Но в нашем C# случае наша среда Visual Studio 2022, при создании `keystore` и вводе пароля - создает одинаковые пароли как на `keystore` так и на ключ (он же `alias`)
+
+На скриншоте ниже пример когда мы создаем пароль
 
 ![image](https://github.com/scriptBoris/MauiTestWorkflow/assets/29772096/a9a6e59a-df38-4e51-8d0b-596eb9cc1b14)
+
+Или когда Visual Studio 2022 просит ввести пароль, каждый раз, когда мы вручную расспространяем релизную .apk
+
+![image](https://github.com/scriptBoris/MauiTestWorkflow/assets/29772096/80981187-0522-40b2-8b8e-4d05fd8cde6b)
 
 Значение данного секрета: `123456`
 
