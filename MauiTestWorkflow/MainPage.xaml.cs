@@ -9,25 +9,25 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void OnCounterClicked(object sender, EventArgs e)
         {
             count++;
 
 #if DEVELOP
-            DisplayAlert("MSG", "DEVELOP mode", "OK");
+            await DisplayAlert("MSG", "DEVELOP mode", "OK");
+#elif PROD
+            await DisplayAlert("MSG", "PRODUCTION mode", "OK");
 #endif
 
 #if DEBUG
-            DisplayAlert("MSG", "DEBUG mode", "OK");
+            await DisplayAlert("MSG", "DEBUG mode", "OK");
 #endif
 
-#if ANDROID
-            DisplayAlert("MSG", "ANDROID mode", "OK");
-#endif
+            await DisplayAlert("MSG", 
+                $"version:{DeviceInfo.Version}\n" + 
+                $"version string: {DeviceInfo.VersionString}",
+                "OK");
 
-#if NET8_0_OR_GREATER
-            DisplayAlert("MSG", "NET8> mode", "OK");
-#endif
 
             if (count == 1)
                 CounterBtn.Text = $"Clicked {count} time";
