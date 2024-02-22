@@ -14,7 +14,10 @@ jobs:
 
     #keystore
     - name: Setup Keystore File
-      run: echo "${{ secrets.KEYSTORE_FILE_BASE64 }}" > myapp.keystore
+      run: |
+        echo "${{ secrets.KEYSTORE_FILE_BASE64 }}" > myapp.keystore
+        cat myapp.keystore
+      
 
     #android sdk
     - name: Set up JDK 17
