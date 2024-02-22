@@ -57,7 +57,7 @@ jobs:
         # Distribution group
         group: all
         # Artefact to upload (.apk or .ipa)
-        file: /home/runner/work/MauiTestWorkflow/MauiTestWorkflow/MauiTestWorkflow/bin/Release/net8.0-android/com.companyname.mauitestworkflow-Signed.apk
+        file: com.companyname.mauitestworkflow-Signed.apk
         #buildVersion: # optional
         # Build number parameter required for macOS .pkg and .dmg files
         #buildNumber: # optional
