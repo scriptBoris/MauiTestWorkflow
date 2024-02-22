@@ -18,7 +18,7 @@ jobs:
     - name: Setup Keystore File
       run: |
         echo "${{ secrets.KEYSTORE_FILE_BASE64 }}" | base64 --decode > /home/runner/work/myapp.keystore
-        sha256sum myapp.keystore
+        sha256sum /home/runner/work/myapp.keystore
       
     #android sdk
     - name: Set up JDK 17
