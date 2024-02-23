@@ -34,7 +34,6 @@
             else
                 CounterBtn.Text = $"Clicked {count} times";
 
-            // test
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
     }
